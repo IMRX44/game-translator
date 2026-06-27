@@ -51,18 +51,18 @@ jobs:
           Compress-Archive -Path publish/* -DestinationPath "GameTranslator-${{ steps.name.outputs.tag }}-win-x64.zip" -Force
 
       - name: Create GitHub Release
-        if: github.event_name == 'push'
         env:
           GH_TOKEN: ${{ github.token }}
         shell: pwsh
         run: |
+          # Creates the tag + release server-side (works for both tag pushes and manual runs).
           gh release create "${{ steps.name.outputs.tag }}" `
             "GameTranslator-${{ steps.name.outputs.tag }}-win-x64.zip" `
+            --target "${{ github.sha }}" `
             --title "GameTranslator ${{ steps.name.outputs.tag }}" `
             --notes "مترجم زندهٔ روی صفحه برای بازی‌های ویندوزی. فایل zip را دانلود و GameTranslator.exe را اجرا کنید. نیاز به نصب یک پک زبان OCR ویندوز دارد — راهنما در docs/BUILD-WINDOWS.md."
 
-      - name: Upload artifact (manual runs)
-        if: github.event_name == 'workflow_dispatch'
+      - name: Upload build artifact
         uses: actions/upload-artifact@v4
         with:
           name: GameTranslator-${{ steps.name.outputs.tag }}-win-x64
