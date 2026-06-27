@@ -11,6 +11,8 @@
     <!-- For the system-tray NotifyIcon. -->
     <UseWindowsForms>true</UseWindowsForms>
     <ApplicationManifest>app.manifest</ApplicationManifest>
+    <!-- WPF handles DPI via the manifest; silence the WinForms-only high-DPI analyzer. -->
+    <NoWarn>$(NoWarn);WFAC010</NoWarn>
     <AssemblyName>GameTranslator</AssemblyName>
   </PropertyGroup>
 

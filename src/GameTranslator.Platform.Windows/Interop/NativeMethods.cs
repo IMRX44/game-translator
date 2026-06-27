@@ -7,7 +7,7 @@ namespace GameTranslator.Platform.Windows.Interop;
 /// Win32 P/Invoke surface used by the capture, hotkey, and window-enumeration code.
 /// All of it is read-only / overlay-level — nothing here injects into or modifies the game.
 /// </summary>
-internal static class NativeMethods
+public static class NativeMethods
 {
     // ---- Window enumeration / info ----
     public delegate bool EnumWindowsProc(IntPtr hWnd, IntPtr lParam);
