@@ -1,3 +1,4 @@
+using System.Net.Http;
 using GameTranslator.Core.Abstractions;
 using GameTranslator.Core.Cache;
 using GameTranslator.Core.Capture;

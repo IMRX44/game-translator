@@ -21,6 +21,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <!-- This is a WPF app that only uses WinForms for the tray icon. Drop the project-wide
+         implicit WinForms/GDI usings so their types don't collide with WPF (Application,
+         FontFamily, Point, Rectangle, KeyEventArgs, MouseEventArgs...). TrayIconManager.cs
+         imports System.Drawing / System.Windows.Forms explicitly where it needs them. -->
+    <Using Remove="System.Windows.Forms" />
+    <Using Remove="System.Drawing" />
+  </ItemGroup>
+
+  <ItemGroup>
     <!-- Ship the offline glossary next to the exe. -->
     <None Include="..\..\assets\glossary\fa.json" Link="assets\glossary\fa.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
