@@ -65,6 +65,10 @@ public partial class App : Application
         _engine.Error += msg => Dispatcher.Invoke(() => _tray.Notify("خطا: " + msg, System.Windows.Forms.ToolTipIcon.Error));
 
         _overlay = new OverlayWindow();
+        // Force HWND creation up front so the click-through extended styles are applied and a
+        // PresentationSource exists (correct DPI) before the very first overlay frame.
+        _overlay.Show();
+        _overlay.Hide();
 
         _hotkey = new HotkeyHost();
         _hotkey.Pressed += OnHotkey;
