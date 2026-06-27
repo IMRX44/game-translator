@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{CAB8148F-29CB-4A28-BB51-A5C3C1E0BF83}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameTranslator.Core", "src\GameTranslator.Core\GameTranslator.Core.csproj", "{E03571F5-9E1E-4E29-8BF3-C0AE6561F10C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameTranslator.Providers", "src\GameTranslator.Providers\GameTranslator.Providers.csproj", "{5460DE45-C720-456B-9883-3C141E9889D9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{6CD463F4-B68A-40B8-83AF-C54E1A99517D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameTranslator.Tests", "tests\GameTranslator.Tests\GameTranslator.Tests.csproj", "{BA691293-972F-4177-9144-EF9A03B2A1C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameTranslator.Platform.Windows", "src\GameTranslator.Platform.Windows\GameTranslator.Platform.Windows.csproj", "{AE696533-2E5F-42E0-AA09-9C12CE7773C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameTranslator.App", "src\GameTranslator.App\GameTranslator.App.csproj", "{C39C4C09-357A-4FF2-A8E3-36F77DE57878}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E03571F5-9E1E-4E29-8BF3-C0AE6561F10C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E03571F5-9E1E-4E29-8BF3-C0AE6561F10C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E03571F5-9E1E-4E29-8BF3-C0AE6561F10C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E03571F5-9E1E-4E29-8BF3-C0AE6561F10C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5460DE45-C720-456B-9883-3C141E9889D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5460DE45-C720-456B-9883-3C141E9889D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5460DE45-C720-456B-9883-3C141E9889D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5460DE45-C720-456B-9883-3C141E9889D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA691293-972F-4177-9144-EF9A03B2A1C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA691293-972F-4177-9144-EF9A03B2A1C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA691293-972F-4177-9144-EF9A03B2A1C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA691293-972F-4177-9144-EF9A03B2A1C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE696533-2E5F-42E0-AA09-9C12CE7773C8}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{AE696533-2E5F-42E0-AA09-9C12CE7773C8}.Debug|Any CPU.Build.0 = Debug|x64
+		{AE696533-2E5F-42E0-AA09-9C12CE7773C8}.Release|Any CPU.ActiveCfg = Release|x64
+		{AE696533-2E5F-42E0-AA09-9C12CE7773C8}.Release|Any CPU.Build.0 = Release|x64
+		{C39C4C09-357A-4FF2-A8E3-36F77DE57878}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{C39C4C09-357A-4FF2-A8E3-36F77DE57878}.Debug|Any CPU.Build.0 = Debug|x64
+		{C39C4C09-357A-4FF2-A8E3-36F77DE57878}.Release|Any CPU.ActiveCfg = Release|x64
+		{C39C4C09-357A-4FF2-A8E3-36F77DE57878}.Release|Any CPU.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E03571F5-9E1E-4E29-8BF3-C0AE6561F10C} = {CAB8148F-29CB-4A28-BB51-A5C3C1E0BF83}
+		{5460DE45-C720-456B-9883-3C141E9889D9} = {CAB8148F-29CB-4A28-BB51-A5C3C1E0BF83}
+		{BA691293-972F-4177-9144-EF9A03B2A1C3} = {6CD463F4-B68A-40B8-83AF-C54E1A99517D}
+		{AE696533-2E5F-42E0-AA09-9C12CE7773C8} = {CAB8148F-29CB-4A28-BB51-A5C3C1E0BF83}
+		{C39C4C09-357A-4FF2-A8E3-36F77DE57878} = {CAB8148F-29CB-4A28-BB51-A5C3C1E0BF83}
+	EndGlobalSection
+EndGlobal

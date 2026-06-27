@@ -1,0 +1,22 @@
+# .NET
+bin/
+obj/
+*.user
+*.suo
+.vs/
+artifacts/
+publish/
+
+# Rider / VS Code
+.idea/
+.vscode/
+
+# App data / models / secrets
+models/*.onnx
+models/*.bin
+*.secret
+local.settings.json
+
+# OS
+Thumbs.db
+.DS_Store

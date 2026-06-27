@@ -1,0 +1,130 @@
+<Window x:Class="GameTranslator.App.Views.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="GameTranslator — تنظیمات"
+        Height="640" Width="560"
+        WindowStartupLocation="CenterScreen"
+        FlowDirection="RightToLeft"
+        FontFamily="Tahoma, Segoe UI"
+        Background="#1E1E24" Foreground="#EDEDED">
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="Margin" Value="0,8,0,2"/>
+            <Setter Property="Foreground" Value="#BFC4D0"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Background" Value="#2A2A33"/>
+            <Setter Property="Foreground" Value="#FFFFFF"/>
+            <Setter Property="BorderBrush" Value="#3A3A45"/>
+            <Setter Property="Padding" Value="4"/>
+        </Style>
+        <Style TargetType="PasswordBox">
+            <Setter Property="Background" Value="#2A2A33"/>
+            <Setter Property="Foreground" Value="#FFFFFF"/>
+            <Setter Property="BorderBrush" Value="#3A3A45"/>
+            <Setter Property="Padding" Value="4"/>
+        </Style>
+        <Style TargetType="ComboBox">
+            <Setter Property="Padding" Value="4"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="#3A6EA5"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Padding" Value="10,5"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Margin" Value="4,0,0,0"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid Margin="14">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <ScrollViewer Grid.Row="0" VerticalScrollBarVisibility="Auto">
+            <StackPanel>
+                <TextBlock Text="پنجره‌ی هدف (Target window)"/>
+                <DockPanel>
+                    <Button x:Name="RefreshWindowsBtn" Content="↻" DockPanel.Dock="Left" Click="RefreshWindows_Click"/>
+                    <ComboBox x:Name="TargetCombo"/>
+                </DockPanel>
+
+                <TextBlock Text="ارائه‌دهنده‌ی AI (Provider)"/>
+                <ComboBox x:Name="ProviderCombo" SelectionChanged="ProviderCombo_Changed"/>
+
+                <TextBlock Text="مدل (Model)"/>
+                <TextBox x:Name="ModelBox"/>
+
+                <TextBlock x:Name="BaseUrlLabel" Text="Base URL (اختیاری / Azure endpoint)"/>
+                <TextBox x:Name="BaseUrlBox"/>
+
+                <TextBlock x:Name="DeploymentLabel" Text="Azure Deployment"/>
+                <TextBox x:Name="DeploymentBox"/>
+
+                <TextBlock Text="کلید API (API key — رمزنگاری‌شده ذخیره می‌شود)"/>
+                <DockPanel>
+                    <Button x:Name="TestBtn" Content="تست اتصال" DockPanel.Dock="Left" Click="Test_Click"/>
+                    <PasswordBox x:Name="ApiKeyBox"/>
+                </DockPanel>
+                <TextBlock x:Name="TestResult" Text="" Foreground="#9AD29A"/>
+
+                <TextBlock Text="حالت ترجمه (Mode)"/>
+                <ComboBox x:Name="ModeCombo"/>
+
+                <TextBlock Text="حالت نمایش (Overlay)"/>
+                <ComboBox x:Name="OverlayModeCombo"/>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" Margin="0,0,6,0">
+                        <TextBlock Text="زبان مبدأ (Source)"/>
+                        <TextBox x:Name="SourceLangBox"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Margin="6,0,0,0">
+                        <TextBlock Text="زبان مقصد (Target)"/>
+                        <TextBox x:Name="TargetLangBox"/>
+                    </StackPanel>
+                </Grid>
+
+                <TextBlock Text="شورتکات (Hotkey)"/>
+                <DockPanel>
+                    <Button x:Name="SetHotkeyBtn" Content="تنظیم" DockPanel.Dock="Left" Click="SetHotkey_Click"/>
+                    <TextBox x:Name="HotkeyBox" IsReadOnly="True"/>
+                </DockPanel>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" Margin="0,0,6,0">
+                        <TextBlock Text="اندازه‌ی فونت (Font size)"/>
+                        <TextBox x:Name="FontSizeBox"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Margin="6,0,0,0">
+                        <TextBlock Text="شفافیت پس‌زمینه 0..1 (Opacity)"/>
+                        <TextBox x:Name="OpacityBox"/>
+                    </StackPanel>
+                </Grid>
+
+                <TextBlock Text="فاصله‌ی به‌روزرسانی زنده (ms)"/>
+                <TextBox x:Name="LiveIntervalBox"/>
+
+                <TextBlock Text="مسیر مدل آفلاین ONNX (اختیاری)"/>
+                <TextBox x:Name="OfflineModelBox"/>
+
+                <Button x:Name="ProfilesBtn" Content="ویرایش نواحی / پروفایل‌ها (Regions)" HorizontalAlignment="Right"
+                        Margin="0,12,0,0" Click="Profiles_Click"/>
+            </StackPanel>
+        </ScrollViewer>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,12,0,0">
+            <Button Content="ذخیره (Save)" Click="Save_Click"/>
+            <Button Content="بستن (Close)" Background="#555" Click="Close_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
